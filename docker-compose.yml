@@ -1,0 +1,27 @@
+version: "2"
+services:
+  app:
+    image: clipmesh:conda #p2s:latest
+
+    command: /bin/bash #&& source activate base
+    deploy:
+      resources: 
+        reservations:
+          devices:
+            - driver: nvidia
+              # count: 1
+              capabilities: [gpu]
+              device_ids: ['2']
+
+    container_name: p2s_${USER}
+    user: ${CURRENT_UID}
+    volumes:
+      - /home/${USER}:/home/${USER}
+      - /etc/passwd:/etc/passwd      
+      - /etc/group:/etc/group
+    #ports:
+     # - "88:8888"
+    tty: true
+    working_dir: $HOME
+    #command: tail -f /dev/null
+    stdin_open: true

@@ -1,4 +1,12 @@
-data/*.ply
-data/*.txt
+data/*
 weights/*.pth
 *.pyc
+log/*
+results/*
+
+src/pointnet2/_ext.cpython-37m-x86_64-linux-gnu.so
+src/pointnet2/build/*
+src/pointnet2/pointnet2.cpython-37m-x86_64-linux-gnu.so
+
+tensorboard/
+training-weights/

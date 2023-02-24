@@ -85,6 +85,8 @@ if __name__ == "__main__":
     if torch.cuda.is_available():
         os.environ['CUDA_VISIBLE_DEVICES'] = gpu
         print("GPU Number:", torch.cuda.device_count(), "GPUs!")
+        # import ipdb; ipdb.set_trace()
+
         model_skel.cuda()
         model_skel.eval()
         model_gae.cuda()
@@ -92,6 +94,8 @@ if __name__ == "__main__":
     else:
         print("No CUDA detected.")
         sys.exit(0)
+
+    # import ipdb; ipdb.set_trace()
 
     model_skel.load_state_dict(torch.load(load_skelnet_path))
     model_gae.load_state_dict(torch.load(load_gae_path))

@@ -1,7 +1,5 @@
 numpy
 future
-pillow==6.0.0
 opencv-python-headless
 tqdm
-scipy==1.5
 visdom

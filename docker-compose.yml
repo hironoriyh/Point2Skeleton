@@ -1,9 +1,9 @@
 version: "2"
 services:
   app:
-    image: clipmesh:conda #p2s:latest
+    image: p2s:conda 
 
-    command: /bin/bash #&& source activate base
+    command: /bin/bash 
     deploy:
       resources: 
         reservations:
